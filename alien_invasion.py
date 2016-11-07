@@ -12,11 +12,11 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode(
         (ai_settings.screen_width, ai_settings.screen_height))
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
     while True:
         game_functions.check_events(ship)
-        game_functions.update_screen(ai_settings, screen, ship)
         ship.update()
+        game_functions.update_screen(ai_settings, screen, ship)
 
 if __name__ == '__main__':
     run_game()
