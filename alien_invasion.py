@@ -1,5 +1,6 @@
 import sys
 import pygame
+from pygame.sprite import Group
 
 import game_functions
 from settings import Settings
@@ -13,10 +14,12 @@ def run_game():
     screen = pygame.display.set_mode(
         (ai_settings.screen_width, ai_settings.screen_height))
     ship = Ship(ai_settings, screen)
+    bullets = Group()
     while True:
         game_functions.check_events(ship)
         ship.update()
-        game_functions.update_screen(ai_settings, screen, ship)
+        bullets.update()
+        game_functions.update_screen(ai_settings, screen, ship, bullets)
 
 if __name__ == '__main__':
     run_game()
