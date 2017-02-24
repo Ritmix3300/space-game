@@ -16,7 +16,7 @@ def run_game():
     ship = Ship(ai_settings, screen)
     bullets = Group()
     while True:
-        game_functions.check_events(ship)
+        game_functions.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         bullets.update()
         game_functions.update_screen(ai_settings, screen, ship, bullets)
