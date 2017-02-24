@@ -1,4 +1,3 @@
-import sys
 import pygame
 from pygame.sprite import Group
 
@@ -15,11 +14,13 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height))
     ship = Ship(ai_settings, screen)
     bullets = Group()
+    aliens = Group()
+    game_functions.create_fleet(ai_settings, screen, ship, aliens)
     while True:
         game_functions.check_events(ai_settings, screen, ship, bullets)
         ship.update()
         game_functions.update_bullets(bullets)
-        game_functions.update_screen(ai_settings, screen, ship, bullets)
+        game_functions.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 if __name__ == '__main__':
     run_game()
