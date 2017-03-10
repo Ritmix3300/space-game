@@ -12,7 +12,7 @@ class Settings:
 
         self.fleet_drop_speed = 20
 
-        self.ship_limit = 1
+        self.ship_limit = 2
         self.speedup_scale = 1.1
         self.score_scale = 1.5
         self.initialize_dynamic_settings()
